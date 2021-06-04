@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <script>
+
+        function validateform() {
+            var objUser = [
+                {
+                    userName: "sagar",
+                    password: "Molurus"
+                },
+                {
+                    userName: "admin",
+                    password: "admin"
+                }
+            ]
+            var name = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (name == null || name == "") {
+                alert("Input Field Can't be empty")
+                return false;
+            }
+            else if (password.length < 4) {
+                alert("Password is too short");
+                document.getElementById("password").value = null;
+                return false;
+            }
+            for (i = 0; i < objUser.length; i++) {
+                if (name == objUser[i].userName && password == objUser[i].password) {
+                    console.log(username + "logged in");
+                    return true
+                }
+
+            }
+            alert("wrong Username or password");
+            document.getElementById("username").value = null;
+            document.getElementById("password").value = null;
+            return false
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="SuperDiv">
+            <div class="first">
+                <div class="textpart1">
+                    <div class="textpart2">
+                        <h3 class="textparttitle">Welcome to MDM</h3>
+                        <hr class="textpart1hr" />
+                        <p class="textpartparagraph"> Lorem Ipsum is simply dummy text of
+                            the printing and typestring industry.
+                            Lorem Ipsum has been the industry's
+                            standard dummy text.
+                        </p>
+                        <button class="textpartbutton">Know More</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="second">
+                <div class="mainCircle">
+                    <div class="twocircle">
+                        <div class="childCircl1"></div>
+                        <div class="childCircl2"></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="third">
+                <div class="formMain">
+                    <div class="sub-formMain">
+                        <h2>Signin</h2>
+                        <hr class="sub-formMainhr" />
+                        <form class="form " name="myform" method="post" , action="table.html"
+                            onsubmit="return validateform()">
+                            <input type="text" placeholder="Enter Username ..." id="username" name="name" />
+                            <input type="password" placeholder="Enter Password ..." id="password" name="password" />
+                            <button type="submit" class="submit">Login</button>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="fourth">
+                <div class="mainTriangle">
+                    <div class="triangleSub">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
